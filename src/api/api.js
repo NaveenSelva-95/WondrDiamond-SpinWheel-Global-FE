@@ -68,9 +68,9 @@ export const getQuestion = async () => {
   }
 };
 
-export const getGlobalList = async (status) => {
+export const getGlobalList = async () => {
   const formdata = new FormData();
-  formdata.append("Status", status);
+  formdata.append("Status", 1);
   // formdata.append("Phone", "+" + Mobile);
   // formdata.append("Email", Email);
   // // formdata.append("BranchCode", localStorage.getItem("Branch"));
@@ -78,7 +78,7 @@ export const getGlobalList = async (status) => {
 
   const requestOptions = {
     method: "POST",
-    body: status ? formdata : null,
+    body: formdata,
     redirect: "follow",
   };
 
