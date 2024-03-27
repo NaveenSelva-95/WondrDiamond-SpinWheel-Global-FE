@@ -22,7 +22,6 @@ const StyledPhoneInput = styled(PhoneInput)`
     color: red !important;
     font-weight: 300 !important;
   }
-
   & .react-tel-input {
     border-radius: 0.8rem !important;
     overflow: hidden;
@@ -30,7 +29,6 @@ const StyledPhoneInput = styled(PhoneInput)`
 
     height: 2.5em;
   }
-
   & .react-tel-input .flag-dropdown {
     border-radius: 0.6rem 0 0 0.6rem !important;
     font-weight: 300 !important;
@@ -43,7 +41,7 @@ const CustomModal = ({ isOpen, onExport }) => {
     Name: "",
     Mobile: "",
     Email: "",
-    Country: "in",
+    Country: "us",
   });
   const [errors, setErrors] = useState({
     Name: "",
@@ -164,7 +162,7 @@ const CustomModal = ({ isOpen, onExport }) => {
   const isFormValid = () => {
     const result =
       !Object.values(errors).some((error) => error !== "") &&
-      !Object.values(formData).some((error) => error === "");
+      formData.Name !== "" && formData.Mobile !== "" && formData.Email !== ""
     return result;
   };
 

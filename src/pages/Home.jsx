@@ -37,6 +37,7 @@ const Home = () => {
   const [isSpinErrorOpen, setSpinErrorOpen] = useState(false);
 
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
+  const [questionPageLoading, setQuestionPageLoading] = useState(false);
 
   // useEffect(() => {
   //   if (!isQuestionModalOpen) {
@@ -125,7 +126,7 @@ const Home = () => {
 
       let win1 = await getSegmentValue(data.VoucherListName);
       if (isSpinAgain) {
-        setWin(315);
+        setWin(60);
         setSecondaryWin(win1)
       } else {
         setWin(win1);
@@ -141,7 +142,7 @@ const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const onCorrectAnswer = async (timeslot, dateslot, storeId) => {
-
+    setQuestionPageLoading(true);
     const data = localStorage.getItem("userData");
     const storedData = JSON.parse(data);
     const { Name, Email, Mobile } = storedData;
@@ -168,8 +169,11 @@ const Home = () => {
         // setLoading(false);
       }
 
-      setStartSpin(true);
+      setQuestionPageLoading(false);
       setIsQuestionModalOpen(false);
+      setStartSpin(true);
+
+
       // setTimeout(() => {
       // alert("rotate")
       // }, 2000)
@@ -194,6 +198,7 @@ const Home = () => {
   const closeOTPModal = () => {
     setOtpModalOpen(false);
   };
+
   const exportUserData = (res) => {
     console.log("Received User Data:", res);
     closeModal();
@@ -225,6 +230,10 @@ const Home = () => {
 
   console.log("isSpin", isSpinAgain)
   function completed() {
+    setStartSpin(false);
+    alert("completed")
+    setStartSpin(true)
+
     if (timeoutId) {
       console.log(timeoutId);
       clearTimeout(timeoutId);
@@ -233,8 +242,12 @@ const Home = () => {
     console.log(status);
     // if (status != "stop") {
 
+
+    setWin(180);
+    setStartSpin(true)
     if (isSpinAgain) {
       setWin(secondarywin);
+      setStartSpin(true)
       if (secondSpinCompleted) {
         setShowConfetti(true);
         triggerMessage();
@@ -400,7 +413,7 @@ const Home = () => {
       />
 
       <CustomModal isOpen={isModalOpen} onExport={exportUserData} />
-      <QuestionModal isOpen={isQuestionModalOpen} OnSuccess={onCorrectAnswer} />
+      <QuestionModal isOpen={isQuestionModalOpen} OnSuccess={onCorrectAnswer} questionPageLoading={questionPageLoading} />
       <FinalModal
         isOpen={isFinalModalOpen}
         onClose={closeOTPModal}

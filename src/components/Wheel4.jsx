@@ -19,18 +19,21 @@ const WheelSpinner = ({ imageUrl, winner, Start, completed, Initiate }) => {
   };
   const spinCompleted = () => {
     console.log("spin Stopped");
-    if (winner !== 315) {
+    setIsSpinning(false);
+    if (winner !== 60) {
       completed();
     }
   };
 
   useEffect(() => {
     if (Start == true) {
+      setIsSpinning(true);
       setTimeout(() => {
         spinCompleted();
       }, 8100);
     }
   }, [Start]);
+
 
   return (
     <Stack justifyContent={"center"} alignItems={"center"}>
@@ -87,7 +90,7 @@ const WheelSpinner = ({ imageUrl, winner, Start, completed, Initiate }) => {
           </div>
         )
       }
-      
+
     </Stack >
   );
 };
