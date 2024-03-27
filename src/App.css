@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fefaf4;
+}
+* {
+  font-family: "Cormorant Infant", serif !important;
+  font-weight: 500 !important;
+  /* font-style: bold; */
+  /* letter-spacing: 0.7em; */
+}
+.mobileSize {
+  font-size: 1.2rem !important;
+}
+input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}
+@media screen and (max-width: 380px) {
+  .mobileSize {
+    font-size: 1rem !important;
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}

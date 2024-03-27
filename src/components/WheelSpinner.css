@@ -1,0 +1,312 @@
+/* 0 degree */
+@keyframes spin0 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3780deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(3900deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      3975deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      3960deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+/* 60 degree */
+
+/* 120 degree */
+@keyframes spin90 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3840deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4080deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4150deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4140deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+@keyframes spin60 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3840deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(3930deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4085deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4080deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+/* 180 degree */
+@keyframes spin120 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3990deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4180deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4205deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4200deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+/* 240 degree */
+@keyframes spin180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3900deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4140deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4265deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4260deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+@keyframes spin240 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3900deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4140deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4345deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4340deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+/* 300 degree */
+@keyframes spin300 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3960deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4200deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4425deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+  100% {
+    transform: rotate(
+      4420deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+
+@keyframes spin360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(360deg); /* 1 second for slow spin */
+  }
+  25% {
+    transform: rotate(1440deg); /* 2.5 seconds for medium spin */
+  }
+  40% {
+    transform: rotate(2520deg); /* 2 seconds for fast spin */
+  }
+  50% {
+    transform: rotate(3240deg); /* 2.5 seconds for medium spin */
+  }
+  60% {
+    transform: rotate(3600deg); /* 3 seconds for slow spin */
+  }
+  70% {
+    transform: rotate(3960deg); /* 3.5 seconds for slower spin */
+  }
+  80% {
+    transform: rotate(4200deg); /* 3.5 seconds for very slow spin */
+  }
+  90% {
+    transform: rotate(
+      4485deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+
+  100% {
+    transform: rotate(
+      4480deg
+    ); /* 4 seconds for very slow spin and stop at 120 degrees */
+  }
+}
+.wheel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.wheel img {
+  width: 100%;
+  height: 100%;
+}
