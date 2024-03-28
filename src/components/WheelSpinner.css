@@ -103,12 +103,12 @@
   }
   90% {
     transform: rotate(
-      4085deg
+      4025deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
   100% {
     transform: rotate(
-      4080deg
+      4020deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }
@@ -136,17 +136,17 @@
   70% {
     transform: rotate(3990deg); /* 3.5 seconds for slower spin */
   }
-  80% {
-    transform: rotate(4180deg); /* 3.5 seconds for very slow spin */
-  }
+  /* 80% {
+    transform: rotate(4000deg); /* 3.5 seconds for very slow spin */
+  /* }  */
   90% {
     transform: rotate(
-      4205deg
+      4085deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
   100% {
     transform: rotate(
-      4200deg
+      4080deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }
@@ -174,17 +174,17 @@
   70% {
     transform: rotate(3900deg); /* 3.5 seconds for slower spin */
   }
-  80% {
+  /* 80% {
     transform: rotate(4140deg); /* 3.5 seconds for very slow spin */
-  }
+  /* }  */
   90% {
     transform: rotate(
-      4265deg
+      4145deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
   100% {
     transform: rotate(
-      4260deg
+      4140deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }
@@ -216,12 +216,12 @@
   }
   90% {
     transform: rotate(
-      4345deg
+      4205deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
   100% {
     transform: rotate(
-      4340deg
+      4200deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }
@@ -248,17 +248,15 @@
   70% {
     transform: rotate(3960deg); /* 3.5 seconds for slower spin */
   }
-  80% {
-    transform: rotate(4200deg); /* 3.5 seconds for very slow spin */
-  }
+
   90% {
     transform: rotate(
-      4425deg
+      4265deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
   100% {
     transform: rotate(
-      4420deg
+      4260deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }
@@ -285,18 +283,16 @@
   70% {
     transform: rotate(3960deg); /* 3.5 seconds for slower spin */
   }
-  80% {
-    transform: rotate(4200deg); /* 3.5 seconds for very slow spin */
-  }
+
   90% {
     transform: rotate(
-      4485deg
+      4325deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 
   100% {
     transform: rotate(
-      4480deg
+      4320deg
     ); /* 4 seconds for very slow spin and stop at 120 degrees */
   }
 }

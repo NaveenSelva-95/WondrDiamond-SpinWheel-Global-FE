@@ -133,7 +133,7 @@ export const checkCustomer = async (data) => {
   const formdata = new FormData();
   formdata.append("Phone", "+" + Mobile);
   formdata.append("Email", Email);
-  formdata.append("StoreDetailKey", "aj");
+  // formdata.append("StoreDetailKey", "aj");
 
   const requestOptions = {
     method: "POST",

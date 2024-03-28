@@ -2,22 +2,14 @@ import React, { useEffect, useState } from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Autocomplete, Grid, Typography } from "@mui/material";
+import { Autocomplete, CircularProgress, Grid, Typography } from "@mui/material";
 import { textFieldStyles } from "../constants";
 import ThreeDButton from "../components/Buttons/3dButton";
 import "react-phone-input-2/lib/style.css";
 import "../App.css";
 import { getGlobalList, getGlobalTimeSlot } from "../api/api";
 
-const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-    { label: 'The Dark Knight', year: 2008 },
-    { label: '12 Angry Men', year: 1957 }
-];
-
-const QuestionModal = ({ isOpen, OnSuccess }) => {
+const QuestionModal = ({ isOpen, OnSuccess, questionPageLoading }) => {
 
     const [location, setLocation] = useState('');
     const [time, setTime] = useState('');
@@ -65,7 +57,6 @@ const QuestionModal = ({ isOpen, OnSuccess }) => {
         }));
         console.log(options)
         setGlobalTime(options)
-
         console.log("time", time);
     }
 
@@ -80,7 +71,6 @@ const QuestionModal = ({ isOpen, OnSuccess }) => {
             setIsDisable(true);
         }
     }, [location, time])
-
 
     return (
         <div>
@@ -101,6 +91,9 @@ const QuestionModal = ({ isOpen, OnSuccess }) => {
                         borderRadius: "10px",
                     }}
                 >
+                    {questionPageLoading &&
+                        <CircularProgress sx={{ position: "absolute", top: "50%", left: "calc(50% - 1rem)", zIndex: "99999999999999999" }} />
+                    }
                     <center>
                         <Typography
                             style={{
@@ -109,9 +102,9 @@ const QuestionModal = ({ isOpen, OnSuccess }) => {
                                 marginBottom: "10px",
                             }}
                         >
-                            Book a slot with your
-                            <br />
-                            Favorite Location
+                            Diamonds are forever,
+                            and so are our prizes!
+                            Confirm your participation and win a stunning diamond pendant!!!
                         </Typography>
                     </center>
 
@@ -198,8 +191,8 @@ const QuestionModal = ({ isOpen, OnSuccess }) => {
                         <center>
                             <ThreeDButton
                                 name={"Proceed"}
-                                onClick={() => OnSuccess(time?.label, time?.dateslot, location?.storeId)}
-                                disabled={false}
+                                onClick={() => !questionPageLoading && OnSuccess(time?.label, time?.dateslot, location?.storeId)}
+                                disabled={isDisable}
                             />
                         </center>
                     </div>

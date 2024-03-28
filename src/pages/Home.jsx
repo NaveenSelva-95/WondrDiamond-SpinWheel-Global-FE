@@ -37,6 +37,7 @@ const Home = () => {
   const [isSpinErrorOpen, setSpinErrorOpen] = useState(false);
 
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
+  const [questionPageLoading, setQuestionPageLoading] = useState(false);
 
   // useEffect(() => {
   //   if (!isQuestionModalOpen) {
@@ -51,7 +52,7 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const [voucherNames, setVoucherNames] = useState(null);
   const [win, setWin] = useState(0);
-  const [secondarywin, setSecondaryWin] = useState(0);
+  // const [secondarywin, setSecondaryWin] = useState(300);
   const [voucherCode, setVoucherCode] = useState(null);
   const [voucherImage, setVoucherImage] = useState(null);
   const [isSpinAgain, setIsSpinAgain] = useState(false);
@@ -71,7 +72,7 @@ const Home = () => {
       } else {
         setStartSpin(true);
       }
-      setSpinAgain(true)
+      // setSpinAgain(true)
     } else {
       openModal();
     }
@@ -87,13 +88,13 @@ const Home = () => {
   function getSegmentValue(value) {
     switch (value) {
       case "Spin Again":
-        return 60;
-      case "Get a free diamond pendent":
         return 300;
+      case "Get a free diamond pendent":
+        return 60;
       case "Flat $50 off":
-        return 240;
-      case "Flat 10% off":
         return 120;
+      case "Flat 10% off":
+        return 240;
       case "Flat 5% off":
         return 180;
       case "$100 Gift Voucher":
@@ -134,11 +135,11 @@ const Home = () => {
       let win1 = await getSegmentValue(data.VoucherListName);
       if (isSpinAgain) {
         setWin(60);
-        // TODO:change number to win1
-        setSecondaryWin(300)
+        setSecondaryWin(win1)
       } else {
         setWin(win1);
       }
+      console.log("image", data.VoucherImageURL);
       setVoucherImage(data.VoucherImageURL);
       setVoucherCode(data.VoucherCode);
     }
@@ -150,7 +151,7 @@ const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const onCorrectAnswer = async (timeslot, dateslot, storeId) => {
-
+    setQuestionPageLoading(true);
     const data = localStorage.getItem("userData");
     const storedData = JSON.parse(data);
     const { Name, Email, Mobile } = storedData;
@@ -177,8 +178,11 @@ const Home = () => {
         // setLoading(false);
       }
 
-      setStartSpin(true);
+      setQuestionPageLoading(false);
       setIsQuestionModalOpen(false);
+      setStartSpin(true);
+
+
       // setTimeout(() => {
       // alert("rotate")
       // }, 2000)
@@ -203,6 +207,7 @@ const Home = () => {
   const closeOTPModal = () => {
     setOtpModalOpen(false);
   };
+
   const exportUserData = (res) => {
     console.log("Received User Data:", res);
     closeModal();
@@ -229,13 +234,15 @@ const Home = () => {
     };
 
     let res = await sendMessage(req);
-    console.log(res);
+    // console.log(res);
+    setVoucherImage(res.img)
   }
 
   console.log("isSpin", isSpinAgain)
   function completed() {
-    setStartSpin(() => false);
-    // alert(startSpin)
+    // setStartSpin(false);
+    // setStartSpin(true)
+
     if (timeoutId) {
       console.log(timeoutId);
       clearTimeout(timeoutId);
@@ -244,29 +251,15 @@ const Home = () => {
     console.log(status);
     // if (status != "stop") {
 
-    if (isSpinAgain) {
-      setWin(secondarywin);
-      if (secondSpinCompleted) {
-        setShowConfetti(true);
-        triggerMessage();
-        setTimeout(() => {
-          setFinalModalOpen(true);
-        }, 3500);
-      } else {
-        setSecondSpinCompleted(true);
-      }
-      // setIsSpinAgain(false);
-      // setTimeout(() => {
-      //   setStartSpin(true);
-      // }, 2000);
-    } else {
-      setShowConfetti(true);
-      triggerMessage();
-      setTimeout(() => {
-        setFinalModalOpen(true);
-      }, 3500);
-    }
 
+    // setWin(180);
+    // setStartSpin(true)
+
+    setShowConfetti(true);
+    triggerMessage();
+    setTimeout(() => {
+      setFinalModalOpen(true);
+    }, 3500);
 
     // }
   }
@@ -382,7 +375,7 @@ const Home = () => {
             <WheelSpinner
               imageUrl={"/wheel.png"}
               completed={completed}
-              winner={180}
+              winner={win}
               Start={startSpin}
               Initiate={triggerModal}
             />
@@ -411,7 +404,7 @@ const Home = () => {
       />
 
       <CustomModal isOpen={isModalOpen} onExport={exportUserData} />
-      <QuestionModal isOpen={isQuestionModalOpen} OnSuccess={onCorrectAnswer} />
+      <QuestionModal isOpen={isQuestionModalOpen} OnSuccess={onCorrectAnswer} questionPageLoading={questionPageLoading} />
       <FinalModal
         isOpen={isFinalModalOpen}
         onClose={closeOTPModal}
