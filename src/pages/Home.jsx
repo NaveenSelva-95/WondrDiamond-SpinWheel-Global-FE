@@ -55,7 +55,7 @@ const Home = () => {
   const [secondarywin, setSecondaryWin] = useState(0);
   const [voucherCode, setVoucherCode] = useState(null);
   const [voucherImage, setVoucherImage] = useState(null);
-  const [isSpinAgain, setIsSpinAgain] = useState(true);
+  const [isSpinAgain, setIsSpinAgain] = useState(false);
   const [spinAgain, setSpinAgain] = useState(false);
   const [secondSpinCompleted, setSecondSpinCompleted] = useState(false);
   const [height, setHeight] = useState("90svh");
@@ -109,7 +109,7 @@ const Home = () => {
       return Math.random() < (1 / 5);
     }
     function handleClick() {
-      setIsSpinAgain(generateTrueRandomly())
+      // setIsSpinAgain(generateTrueRandomly())
       console.log("isSpin", generateTrueRandomly());
     }
     handleClick()
