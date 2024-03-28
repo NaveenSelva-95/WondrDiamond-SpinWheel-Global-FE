@@ -120,14 +120,6 @@ const Home = () => {
     setIsQuestionModalOpen(true);
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setWin(180);
-
-
-      setStartSpin(true)
-    }, 9000)
-  }, [])
   async function handleNextButtonClick(data) {
 
     setIsQuestionModalOpen(true)
