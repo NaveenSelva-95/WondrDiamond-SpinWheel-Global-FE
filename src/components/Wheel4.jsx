@@ -20,9 +20,9 @@ const WheelSpinner = ({ imageUrl, winner, Start, completed, Initiate }) => {
   const spinCompleted = () => {
     console.log("spin Stopped");
     setIsSpinning(false);
-    if (winner !== 60) {
-      completed();
-    }
+    // if (winner !== 60) {
+    completed();
+    // }
   };
 
   useEffect(() => {
