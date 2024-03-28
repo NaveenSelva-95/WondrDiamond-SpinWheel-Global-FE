@@ -54,7 +54,7 @@ const Home = () => {
   const [secondarywin, setSecondaryWin] = useState(0);
   const [voucherCode, setVoucherCode] = useState(null);
   const [voucherImage, setVoucherImage] = useState(null);
-  const [isSpinAgain, setIsSpinAgain] = useState(true);
+  const [isSpinAgain, setIsSpinAgain] = useState(false);
   const [spinAgain, setSpinAgain] = useState(false);
   const [secondSpinCompleted, setSecondSpinCompleted] = useState(false);
   const [height, setHeight] = useState("90svh");
@@ -108,7 +108,7 @@ const Home = () => {
       return Math.random() < (1 / 5);
     }
     function handleClick() {
-      setIsSpinAgain(generateTrueRandomly())
+      // setIsSpinAgain(generateTrueRandomly())
       console.log("isSpin", generateTrueRandomly());
     }
     handleClick()
@@ -119,14 +119,23 @@ const Home = () => {
     setIsQuestionModalOpen(true);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      setWin(180);
+
+
+      setStartSpin(true)
+    }, 9000)
+  }, [])
   async function handleNextButtonClick(data) {
+
     setIsQuestionModalOpen(true)
     if (data) {
-
       let win1 = await getSegmentValue(data.VoucherListName);
       if (isSpinAgain) {
-        setWin(315);
-        setSecondaryWin(win1)
+        setWin(60);
+        // TODO:change number to win1
+        setSecondaryWin(300)
       } else {
         setWin(win1);
       }
@@ -225,6 +234,8 @@ const Home = () => {
 
   console.log("isSpin", isSpinAgain)
   function completed() {
+    setStartSpin(() => false);
+    // alert(startSpin)
     if (timeoutId) {
       console.log(timeoutId);
       clearTimeout(timeoutId);

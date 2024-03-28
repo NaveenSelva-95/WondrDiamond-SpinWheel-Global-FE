@@ -17,9 +17,10 @@ const WheelSpinner = ({ imageUrl, winner, Start, completed, Initiate }) => {
     Initiate();
     // setIsSpinning(true);
   };
+
   const spinCompleted = () => {
     console.log("spin Stopped");
-    if (winner !== 315) {
+    if (winner !== 60) {
       completed();
     }
   };
@@ -87,7 +88,7 @@ const WheelSpinner = ({ imageUrl, winner, Start, completed, Initiate }) => {
           </div>
         )
       }
-      
+
     </Stack >
   );
 };
